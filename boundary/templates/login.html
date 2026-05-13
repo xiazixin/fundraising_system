@@ -1,33 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Login</title>
-    </head>
-    <body>
-        <h1>System Login</h1>
 
-        <form method="POST">
-            <label>Role:</label>
-            <select name="role">
-                <option value="User Admin">User Admin</option>
-                <option value="Fund Raiser">Fund Raiser</option>
-                <option value="Donee">Donee</option>
-                <option value="Platform Manager">Platform Manager</option>
-            </select>
+<head>
+    <title>Login</title>
+</head>
 
-            <br><br>
+<body>
+    <h1>System Login</h1>
 
-            <label>Username:</label>
-            <input type="text" name="username">
+    <form method="POST">
+        <label>Role:</label>
+        <select name="role">
+            <option value="User Admin">User Admin</option>
+            <option value="Fund Raiser">Fund Raiser</option>
+            <option value="Donee">Donee</option>
+            <option value="Platform Manager">Platform Manager</option>
+        </select>
 
-            <br><br>
+        <br><br>
 
-            <label>Password:</label>
-            <input type="text" name="password">
+        <label>Username:</label>
+        <input type="text" name="username">
 
-            <br><br>
+        <br><br>
 
-            <button type="submit">Login</button>
-        </form>
-    </body>
+        <label>Password:</label>
+        <input type="text" name="password">
+
+        <br><br>
+
+        <button type="submit" onclick="validateUsername()">Login</button>
+    </form>
+</body>
+<script>
+
+
+    function validateUsername() {
+        // Get the first element with name="username"
+        const usernameField = document.getElementsByName("username")[0];
+        if (!usernameField) {
+            alert("Username field not found.");
+            return;
+        }
+
+        const username = usernameField.value.trim();
+        // Regex: starts with a letter, followed by letters/numbers/underscores, length 3–16
+        const usernamePattern = /^[A-Za-z][A-Za-z0-9_]{2, 15}$/;
+
+        if (usernamePattern.test(username)) {
+            alert("✅ Valid username");
+        } else {
+            alert("❌ Invalid username. Must start with a letter and be 3–16 characters long.");
+        }
+    }
+
+
+</script>
+
 </html>
