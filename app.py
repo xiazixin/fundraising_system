@@ -5,7 +5,7 @@ from control.auth_controller import auth_bp
 from control.user_admin_controller import user_admin_bp
 from control.fundraiser_controller import fundraiser_bp
 
-app = Flask(__name__, template_folder="boundary/templates")
+app = Flask(__name__, template_folder="boundary/templates", static_url_path="/boundary/static")
 app.secret_key = "secret_key"
 app.register_blueprint(auth_bp)
 app.register_blueprint(user_admin_bp)

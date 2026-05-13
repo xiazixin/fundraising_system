@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.marginleft { margin-left: 20px; }
+.marginright { margin-right: 20px; }
+
+.flexleft {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flexright {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floatleft { float: left; }
+.floatright { float: right; }
+
+.textleft { text-align: left; }
+.textright { text-align: right; }
+.textcenter { text-align: center; }
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}

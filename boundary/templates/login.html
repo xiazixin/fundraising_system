@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
+    
 
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
+    <div class="flexcenter"></div>
+    <div class="flexcenter">
     <h1>System Login</h1>
 
     <form method="POST">
@@ -20,7 +24,7 @@
         <br><br>
 
         <label>Username:</label>
-        <input type="text" name="username">
+        <input type="text" name="username" pattern="/^[A-Za-z][A-Za-z0-9_]{2, 15}$/">
 
         <br><br>
 
@@ -31,11 +35,12 @@
 
         <button type="submit" onclick="validateUsername()">Login</button>
     </form>
+</div>
 </body>
 <script>
 
 
-    function validateUsername() {
+    /* function validateUsername() {
         // Get the first element with name="username"
         const usernameField = document.getElementsByName("username")[0];
         if (!usernameField) {
@@ -53,7 +58,7 @@
             alert("❌ Invalid username. Must start with a letter and be 3–16 characters long.");
         }
     }
-
+*/
 
 </script>
 
